@@ -12,7 +12,14 @@ mathjax: true
 
 没事瞎水博客系列……
 
-在日常处理矩阵的时候，有时我们希望在不更改矩阵的前提下获知其每一行/列的字典序**“名次”（rank）**。MATLAB/NumPy分别提供了`sortrows`/`argsort`方法来获得一个**“索引向量”（index vector）**，表示排序后的矩阵的每一行/列对应原矩阵的行/列号。只需对索引向量再做一次排序，便可得到对应的**”名次向量“（rank vector）**。为了深入理解这个操作背后的原理，我参考了StackExchange上的[这篇回答](https://math.stackexchange.com/questions/3607762/why-does-sorting-twice-produce-a-rank-vector)。从他的证明过程中我发现了一个关键：排序前后两个矩阵的关系可以用**排列/置换（permutation）**来刻画。下面我将站在线性代数的视角来系统化解释一下“名次向量”背后的原理。
+在日常处理矩阵的时候，有时我们希望在不更改矩阵的前提下获知其每一行/列的字典序**“名次”（rank）**。MATLAB/NumPy分别提供了`sortrows`/`argsort`方法来获得一个**“索引向量”（index vector）**，表示排序后的矩阵的每一行/列对应原矩阵的行/列号。只需对索引向量再做一次排序，便可得到对应的**”名次向量“（rank vector）**。对应MATLAB代码大致如下：
+
+``` matlab
+[~, index] = sortrows(matrix);
+[~, rank] = sort(index);
+```
+
+为了深入理解这个操作背后的原理，我参考了StackExchange上的[这篇回答](https://math.stackexchange.com/questions/3607762/why-does-sorting-twice-produce-a-rank-vector)。从他的证明过程中我发现了一个关键：排序前后两个矩阵的关系可以用**排列/置换（permutation）**来刻画。下面我将站在线性代数的视角来系统化解释一下“名次向量”背后的原理。
 
 <!-- more -->
 
