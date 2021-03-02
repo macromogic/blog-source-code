@@ -16,7 +16,7 @@ mathjax: true
 
 ### 帕累托支配
 
-在多目标优化领域，一般来说，决策变量和目标都是由多个元素组成的，而不同目标之间往往难以比较。如果将决策/目标视作一个向量$\mathbf{x}$，我们用**帕累托支配（Pareto dominance）**来刻画向量间的关系。对于两个$n$维向量$\mathbf{x}^{(1)}, \mathbf{x}^{(2)}$，我们称$\mathbf{x}^{(1)}$支配$\mathbf{x}^{(2)}$（记作$\mathbf{x}^{(1)} \prec \mathbf{x}^{(2)}$）当且仅当$\forall 1 \leq i \leq n,\ \mathbf{x}^{(1)}_i \leq \mathbf{x}^{(2)}_i$，且$\exists 1 \leq i \leq n,\ \mathbf{x}^{(1)}_i < \mathbf{x}^{(2)}_i$。
+在多目标优化领域，一般来说，决策变量和目标都是由多个元素组成的，而不同目标之间往往难以比较。如果将决策/目标视作一个向量$\mathbf{x}$，我们用**帕累托支配（Pareto dominance）**来刻画向量间的关系。对于两个$n$维向量$\mathbf{x}^{(1)} = (x^{(1)}_1, \dots, x^{(1)}_n)^T, \mathbf{x}^{(2)} = (x^{(2)}_1, \dots, x^{(2)}_n)^T$，我们称$\mathbf{x}^{(1)}$支配$\mathbf{x}^{(2)}$（记作$\mathbf{x}^{(1)} \prec \mathbf{x}^{(2)}$）当且仅当$\forall 1 \leq i \leq n,\ x^{(1)}_i \leq x^{(2)}_i$，且$\exists 1 \leq i \leq n,\ x^{(1)}_i < x^{(2)}_i$。
 
 <!-- more -->
 
@@ -53,7 +53,7 @@ end
 
 ### 遗传算法的交叉和变异
 
-此处暂时留空。
+感觉这一部分适合用一篇单独的文章来记录……具体内容请移步[这里](https://blog.macromogic.xyz/2021/02/09/ga-cross-mutate/)。
 
 ## NSGA-II的主体框架
 
